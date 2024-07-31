@@ -6,14 +6,15 @@ void main() {
     {'id': 4, 'name': 'Headphones', 'price': 149.99},
     {'id': 5, 'name': 'Smartwatch', 'price': 199.99}
   ];
-  
-  for(var product in products){
-    int ivaProducto = getIva(product);
-    print('${name} | ${}')
+  print('ID | NOMBRE | PRECIO | IVA');
+  for (var product in products) {
+    var ivaProducto = getIva(product);
+    print(
+        '${product['id']} | ${product['name']} | ${product['price']} | ${ivaProducto}');
   }
 }
 
-int getIva(var product) {
-  final iva = product.price * 0.19;
+getIva(var product) {
+  final iva = product['price'] * 0.19;
   return iva;
 }
